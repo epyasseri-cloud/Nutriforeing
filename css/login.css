@@ -234,6 +234,39 @@
     text-decoration: underline;
 }
 
+/* Recovery Password Page */
+.recovery-icon {
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+}
+
+.back-to-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.back-to-login:hover {
+    border-color: #1db883;
+    color: #1db883;
+    background-color: #f8f9fa;
+}
+
+.back-to-login svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
     .login-container {

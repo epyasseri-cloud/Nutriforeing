@@ -507,3 +507,54 @@ nav a.active {
     background: #149569;
     border-color: #149569;
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.btn-register {
+  background: #17a678;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.hero-dieta {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1db883, #17a678);
+  color: white;
+}
+
+.piramide-grid, .dias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px 50px;
+}
+
+.cta {
+  background: linear-gradient(135deg, #1db883, #17a678);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}

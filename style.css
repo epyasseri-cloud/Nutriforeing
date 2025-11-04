@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #333;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notification-icon:hover {
+    background-color: #e8e8e8;
+}
+
+.notification-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #f0f0f0;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #1db883;
+}

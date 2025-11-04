@@ -1,0 +1,254 @@
+/* Login & Register Pages Specific Styles */
+.login-section {
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 50px 40px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+}
+
+.register-container {
+    max-width: 520px;
+    padding: 40px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #1db883;
+}
+
+.back-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.login-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+}
+
+.login-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+}
+
+.login-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.password-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #999;
+}
+
+.toggle-password svg {
+    width: 22px;
+    height: 22px;
+}
+
+.toggle-password:hover {
+    color: #1db883;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.forgot-password {
+    color: #1db883;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #17a678;
+}
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 184, 131, 0.3);
+}
+
+.login-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.register-link {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+}
+
+.register-link a {
+    color: #1db883;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #17a678;
+}
+
+.security-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #999;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+.security-notice svg {
+    width: 18px;
+    height: 18px;
+    stroke: #999;
+}
+
+/* Input with icon (Register page) */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon svg:first-child {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: #999;
+    pointer-events: none;
+}
+
+.input-with-icon input {
+    padding-left: 45px;
+}
+
+.input-with-icon .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Terms checkbox (Register page) */
+.terms-checkbox {
+    margin-bottom: 24px;
+}
+
+.terms-checkbox .remember-me {
+    align-items: flex-start;
+}
+
+.terms-checkbox .remember-me span {
+    line-height: 1.5;
+}
+
+.terms-checkbox a {
+    color: #1db883;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .login-container {
+        padding: 40px 25px;
+    }
+    
+    .register-container {
+        padding: 35px 20px;
+    }
+    
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+    
+    .login-container h1 {
+        font-size: 26px;
+    }
+}

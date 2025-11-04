@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta Vegetariana - Nutriforeing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1db883;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #1db883;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .login-btn, .register-btn {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .login-btn {
+      color: #1db883;
+      border: 2px solid #1db883;
+    }
+
+    .login-btn:hover {
+      background-color: #1db883;
+      color: white;
+    }
+
+    .register-btn {
+      background-color: #1db883;
+      color: white;
+      border: 2px solid #1db883;
+    }
+
+    .register-btn:hover {
+      background-color: #17a678;
+    }
+
+    .hero-dieta {
+      text-align: center;
+      background: linear-gradient(135deg, #6dcf9b 0%, #4cb878 100%);
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .hero-dieta h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-dieta p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .info-dieta {
+      max-width: 1000px;
+      margin: 60px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .info-dieta img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .info-dieta-text h2 {
+      color: #4cb878;
+      margin-bottom: 15px;
+    }
+
+    .info-dieta-text ul, .info-dieta-text ol {
+      text-align: left;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .cta-section {
+      background-color: #4cb878;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      border-radius: 10px;
+      margin: 60px auto;
+      max-width: 900px;
+    }
+
+    .cta-button {
+      background-color: white;
+      color: #4cb878;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #dff6e9;
+    }
+
+    footer {
+      background-color: #121a1b;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Nutriforeing</div>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="dietas.html" class="active">Dietas</a>
+      <a href="#">Mi Progreso</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="Inicio_sesion.html" class="login-btn">Iniciar Sesión</a>
+      <a href="registro.html" class="register-btn">Registrarse</a>
+    </div>
+  </header>
+
+  <section class="hero-dieta">
+    <h1>Dieta Vegetariana</h1>
+    <p>Una dieta rica en verduras, frutas, legumbres y cereales integrales que promueve la salud y el respeto por el medio ambiente.</p>
+  </section>
+
+  <section class="info-dieta">
+    <img src="imagenes/vegetariana.jpeg" alt="Dieta Vegetariana">
+    <div class="info-dieta-text">
+      <h2>Ingredientes</h2>
+      <ul>
+        <li>1 taza de lentejas cocidas</li>
+        <li>1 zanahoria rallada</li>
+        <li>1/2 cebolla picada</li>
+        <li>1 cucharada de aceite de oliva</li>
+        <li>1 tomate picado</li>
+        <li>Sal, ajo y especias al gusto</li>
+      </ul>
+
+      <h2>Pasos</h2>
+      <ol>
+        <li>Saltea la cebolla y el ajo con aceite de oliva.</li>
+        <li>Agrega el tomate y cocina por 5 minutos.</li>
+        <li>Incorpora las lentejas y las verduras ralladas.</li>
+        <li>Sazona con sal y especias al gusto.</li>
+        <li>Sirve caliente acompañado de arroz integral o pan integral.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3>Vive saludable con una dieta basada en plantas</h3>
+    <p>Únete al estilo de vida vegetariano y descubre sus beneficios.</p>
+   
+  </section>
+
+  <footer>
+    <p>© 2025 Nutriforeing. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -647,3 +647,83 @@ body {
   text-align: center;
   padding: 60px 20px;
 }
+
+.dietas-section {
+  padding: 60px 100px;
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+.dietas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; 
+}
+
+.dieta-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dieta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dieta-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.dieta-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.dieta-info h3 {
+  color: #0d6b4f;
+  margin-bottom: 10px;
+}
+
+.dieta-info p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.precio {
+  display: block;
+  color: #17a678;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #1db883;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #17a678;
+}
+
+@media (max-width: 1000px) {
+  .dietas-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

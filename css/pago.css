@@ -68,33 +68,91 @@
 }
 
 .payment-methods {
-    display: flex;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
     margin-bottom: 8px;
 }
 
 .payment-method-btn {
-    flex: 1;
-    padding: 12px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    position: relative;
+    padding: 20px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
     background: white;
     color: #666;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.payment-method-btn svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+.payment-method-btn span {
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.payment-method-btn .check-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    background: #1db883;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.payment-method-btn .check-icon svg {
+    width: 14px;
+    height: 14px;
+    color: white;
 }
 
 .payment-method-btn:hover {
     border-color: #1db883;
     color: #1db883;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(29, 184, 131, 0.15);
+}
+
+.payment-method-btn:hover svg {
+    transform: scale(1.1);
 }
 
 .payment-method-btn.active {
-    background: #1db883;
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
     color: white;
     border-color: #1db883;
+    box-shadow: 0 8px 20px rgba(29, 184, 131, 0.25);
+    transform: translateY(-4px);
+}
+
+.payment-method-btn.active .check-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.payment-method-btn.active svg {
+    color: white;
+    transform: scale(1.15);
 }
 
 .payment-hint {
@@ -172,7 +230,24 @@
     }
 
     .payment-methods {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .payment-method-btn {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .payment-method-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .payment-method-btn span {
+        text-align: left;
+        flex: 1;
     }
 
     .form-row {

@@ -348,6 +348,119 @@ footer {
     }
 }
 
+/* Shared Form Styles */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1db883;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(29, 184, 131, 0.1);
+}
+
+/* Shared Button Styles */
+.social-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.social-button:hover {
+    border-color: #1db883;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-button.google {
+    color: #333;
+}
+
+.social-button.facebook {
+    color: #1877F2;
+}
+
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.divider span {
+    background: white;
+    padding: 0 15px;
+    color: #999;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1db883;
+}
+
+/* Pricing Plans */
 .center-card {
     margin: 0 auto;       
     grid-column: 1 / -1;     
@@ -447,31 +560,7 @@ footer {
     background: #e8e8e8;
 }
 
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-
-
-nav a {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #17a678;
-}
-
+/* Auth Buttons */
 .auth-buttons {
     display: flex;
     gap: 15px;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio-Nutriforeing</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <header>
@@ -12,83 +13,102 @@
             <div class="logo-icon"></div>
             <span>Nutriforeing</span>
         </div>
-        <nav>
-            <a href="#" class="active">Inicio</a>
-            <a href="dietas.html">Dietas</a>
-            <a href="#">Mi Progreso</a>
-        </nav>
         <div class="header-right">
             <div class="notification-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
             </div>
-            <img src="imagenes/gato-meme.gif" alt="Profile" class="profile-pic">
+            <img src="" alt="Profile" class="profile-pic">
         </div>
     </header>
 
+
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Tu Dieta Personalizada<br>con IA</h1>
-                <p>Calcula tu IMC, obtén dietas personalizadas y alcanza tus<br>objetivos de salud con nuestro sistema inteligente.</p>
-                <button class="cta-button">Ver Dietas</button>
+        <section class="login-section">
+            <div class="login-container">
+                <a href="index.html" class="back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Inicio
+                </a>
+                <div class="login-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h1>Iniciar Sesión</h1>
+                <p class="login-subtitle">Accede a tu cuenta para continuar</p>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" placeholder="········" required>
+                            <button type="button" class="toggle-password">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                        </svg>
+                        Iniciar Sesión
+                    </button>
+
+                    <div class="divider">
+                        <span>O continúa con</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-button google">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="social-button facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <p class="register-link">
+                        ¿No tienes una cuenta? <a href="#">Regístrate aquí</a>
+                    </p>
+                </form>
+
+                <p class="security-notice">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Tu información está protegida con cifrado SSL
+                </p>
             </div>
         </section>
-
-        <section class="features">
-            <div class="features-header">
-                <h2>Funcionalidades Principales</h2>
-                <p>Todo lo que necesitas para mantener una dieta saludable</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3>Calculadora IMC</h3>
-                    <p>Calcula y actualiza tu Índice de Masa Corporal para obtener recomendaciones personalizadas.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                        </svg>
-                    </div>
-                    <h3>Dietas y Recetas</h3>
-                    <p>Accede a una amplia variedad de dietas y recetas, incluso sin suscripción.</p>
-                </div>
-
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                    </div>
-                    <h3>Seguimiento de Progreso</h3>
-                    <p>Monitorea tu progreso con gráficos detallados y estadísticas personales.</p>
-                </div>
-
-
-                <div class="feature-card center-card">
-                    <div class="feature-icon">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3>IA Personalizada</h3>
-                    <p>Obtén dietas creadas por IA basadas en tu presupuesto y preferencias.</p>
-                </div>
-            </div>
-        </section>
-        
-        
-
     </main>
     <footer>
         <div class="footer-content">
@@ -103,7 +123,7 @@
             <div class="footer-section">
                 <h4>Producto</h4>
                 <ul class="footer-links">
-                    <li><a href="dietas.html">Dietas</a></li>
+                    <li><a href="#">Dietas</a></li>
                     <li><a href="#">Calculadora IMC</a></li>
                     <li><a href="#">Seguimiento</a></li>
                 </ul>
@@ -139,7 +159,6 @@
         <div class="footer-bottom">
             <p>© 2024 Nutriforeing. Todos los derechos reservados.</p>
         </div>
-
     </footer>
 </body>
 </html>

@@ -26,6 +26,12 @@ header {
     color: #333;
 }
 
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
 .logo-icon {
     width: 35px;
     height: 35px;

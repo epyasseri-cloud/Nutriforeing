@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio-Nutriforeing</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <title>Inicio - Nutriforeing</title>
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -13,70 +13,123 @@
             <div class="logo-icon"></div>
             <span>Nutriforeing</span>
         </div>
-        <div class="header-right">
-            <div class="notification-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-            </div>
-            <img src="" alt="Profile" class="profile-pic">
+        <nav>
+            <a href="inicio.html" class="active">Inicio</a>
+            <a href="dietas.html">Dietas</a>
+            <a href="progreso.html">Mi Progreso</a>
+        </nav>
+       
+            <img src="../shared/imagenes/gato-meme.gif" alt="Profile" class="profile-pic">
         </div>
+
+        <div class="auth-buttons">
+            <a href="Inicio_sesion.html" class="login-btn">Iniciar Sesión</a>
+            <a href="registro.html" class="register-btn">Registrarse</a>
+        </div>
+
     </header>
 
-
     <main>
-        <section class="login-section">
-            <div class="login-container">
-                <a href="Inicio_sesion.html" class="back-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Inicio
-                </a>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Tu Dieta Personalizada<br>con IA</h1>
+                <p>Calcula tu IMC, obtén dietas personalizadas y alcanza tus<br>objetivos de salud con nuestro sistema inteligente.</p>
+                <a href="dietas.html" class="cta-button">Ver Dietas</a>
 
-                <div class="login-icon recovery-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-                    </svg>
-                </div>
-
-                <h1>Recuperar Contraseña</h1>
-                <p class="login-subtitle">Te enviaremos un enlace para restablecer tu contraseña</p>
-
-                <form class="login-form">
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-
-                    <button type="submit" class="login-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Enviar Enlace de Recuperación
-                    </button>
-
-                    <div class="divider">
-                        <span>¿Recordaste tu contraseña?</span>
-                    </div>
-
-                    <a href="Inicio_sesion.html" class="back-to-login">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                        </svg>
-                        Volver al Inicio de Sesión
-                    </a>
-                </form>
             </div>
         </section>
-    </main>
 
+        <section class="features">
+            <div class="features-header">
+                <h2>Funcionalidades Principales</h2>
+                <p>Todo lo que necesitas para mantener una dieta saludable</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3>Calculadora IMC</h3>
+                    <p>Calcula y actualiza tu Índice de Masa Corporal para obtener recomendaciones personalizadas.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3>Dietas y Recetas</h3>
+                    <p>Accede a una amplia variedad de dietas y recetas, incluso sin suscripción.</p>
+                    <a href="dietas.html" class="login-btn" style="margin-top:15px; display:inline-block;">Ver Detalles</a>
+
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3>Seguimiento de Progreso</h3>
+                    <p>Monitorea tu progreso con gráficos detallados y estadísticas personales.</p>
+                    <a href="progreso.html" class="login-btn" style="margin-top:15px; display:inline-block;">Ver Detalles</a>
+
+                </div>
+
+
+                <div class="feature-card center-card">
+                    <div class="feature-icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3>IA Personalizada</h3>
+                    <p>Obtén dietas creadas por IA basadas en tu presupuesto y preferencias.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="planes">
+            <h2>Obtén acceso completo a dietas personalizadas con IA y seguimiento avanzado</h2>
+            <div class="planes-container">
+                <div class="plan basico">
+                    <h3>Básico</h3>
+                    <p class="precio">Gratis</p>
+                    <ul>
+                        <li>3 dietas gratuitas</li>
+                        <li>Calculadora IMC</li>
+                        <li>Recetas básicas</li>
+                    </ul>
+                    <button class="btn-plan">Plan Actual</button>
+                </div>
+
+                <div class="plan premium">
+                    <h3>Premium</h3>
+                    <p class="precio">$30<span>/mes</span></p>
+                    <ul>
+                        <li>Todo lo del plan básico</li>
+                        <li>Seguimiento avanzado</li>
+                        <li>Revisión alimenticia</li>
+                        <li>Soporte nutricional</li>
+                    </ul>
+                    <a href="pago.html" class="cta-button">Suscribirme</a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <div class="logo-icon"></div>
-                    <span>Nutriforeing</span>
+                    <div class="logo-icon">🌿</div>
+                    <span>NutriEasy</span>
                 </div>
                 <p class="footer-description">Tu compañero inteligente para una vida más saludable con dietas personalizadas.</p>
             </div>
@@ -84,7 +137,7 @@
             <div class="footer-section">
                 <h4>Producto</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Dietas</a></li>
+                    <li><a href="">Dietas</a></li>
                     <li><a href="#">Calculadora IMC</a></li>
                     <li><a href="#">Seguimiento</a></li>
                 </ul>
@@ -118,8 +171,9 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2024 Nutriforeing. Todos los derechos reservados.</p>
+            <p> 2025 Nutriforeing. Todos los derechos reservados.</p>
         </div>
+
     </footer>
 </body>
 </html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutriforeing - Tu Compañero de Nutrición</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #1db883;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(29, 184, 131, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1db883;
+            border: 2px solid #1db883;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0fdf9;
+        }
+        
+        .btn-premium {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1d2e;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-premium::before {
+            content: '⭐';
+            margin-right: 8px;
+        }
+        
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .divider {
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .divider::before {
+            margin-right: 15px;
+        }
+        
+        .divider::after {
+            margin-left: 15px;
+        }
+        
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .info strong {
+            color: #1db883;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌿</div>
+        <h1>Nutriforeing</h1>
+        <p>Bienvenido a tu compañero inteligente de nutrición</p>
+        
+        <div class="options">
+            <a href="Usuario_Auth/inicio.html" class="btn btn-primary">Entrar como Usuario Autenticado</a>
+            <a href="Premium/inicio.html" class="btn btn-premium">Entrar como Usuario Premium</a>
+        </div>
+        
+        <div class="divider">o</div>
+        
+        <div class="options">
+            <a href="No_Auth/index.html" class="btn btn-secondary">Ver como Visitante</a>
+            <a href="Login/Inicio_sesion.html" class="btn btn-secondary">Iniciar Sesión</a>
+        </div>
+        
+        <div class="info">
+            <strong>Nota de desarrollo:</strong> Esta página es temporal para navegar entre las diferentes versiones del sitio. En producción, el usuario sería redirigido automáticamente según su estado de autenticación.
+        </div>
+    </div>
+    
+    <script>
+        // Simular redirección automática basada en localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            const userType = localStorage.getItem('userType');
+            
+            // Descomentar esto en producción:
+            /*
+            if (userType === 'premium') {
+                window.location.href = 'Premium/inicio.html';
+            } else if (userType === 'authenticated') {
+                window.location.href = 'Usuario_Auth/inicio.html';
+            } else {
+                window.location.href = 'No_Auth/index.html';
+            }
+            */
+        });
+        
+        // Guardar la selección del usuario
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const href = e.target.getAttribute('href');
+                
+                if (href.includes('Premium')) {
+                    localStorage.setItem('userType', 'premium');
+                } else if (href.includes('Usuario_Auth')) {
+                    localStorage.setItem('userType', 'authenticated');
+                } else if (href.includes('No_Auth')) {
+                    localStorage.setItem('userType', 'guest');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - Nutriforeing</title>
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/informacion.css">
+    <link rel="stylesheet" href="css/pago.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span>Nutriforeing</span>
+        </div>
+        
+        <nav>
+            <a href="inicio.html" class="active">Inicio</a>
+            <a href="dietas.html">Dietas</a>
+            <a href="progreso.html">Mi Progreso</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="payment-section">
+            <div class="payment-container">
+                <div class="payment-left">
+                    <h1>Detalles de Pago</h1>
+                    <p>Por favor ingresa tu información de pago.</p>
+                </div>
+
+                <div class="payment-right">
+                    <form class="payment-form">
+                        <div class="form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" placeholder="tuemail@ejemplo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Método de Pago</label>
+                            <div class="payment-methods">
+                                <button type="button" class="payment-method-btn active" data-method="card">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                    </svg>
+                                    <span>Tarjeta de Crédito</span>
+                                    <div class="check-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button type="button" class="payment-method-btn" data-method="paypal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    <span>PayPal</span>
+                                    <div class="check-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button type="button" class="payment-method-btn" data-method="bank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                    </svg>
+                                    <span>Transferencia Bancaria</span>
+                                    <div class="check-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                            <p class="payment-hint">Selecciona tu método de pago preferido</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Número de Tarjeta</label>
+                            <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Fecha de Expiración</label>
+                                <input type="text" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Código de Seguridad</label>
+                                <input type="text" placeholder="CVC" maxlength="3" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancelar</button>
+                            <button type="submit" class="confirm-btn">Confirmar Pago</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        
+        
+    </footer>
+
+    <script>
+        // Interactividad de métodos de pago
+        const paymentButtons = document.querySelectorAll('.payment-method-btn');
+        
+        paymentButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                paymentButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
+                
+                // Pequeña animación de "pulso"
+                this.style.transform = 'translateY(-4px) scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-4px) scale(1)';
+                }, 100);
+            });
+        });
+
+        // Formatear número de tarjeta automáticamente
+        const cardInput = document.querySelector('input[placeholder="XXXX-XXXX-XXXX-XXXX"]');
+        if (cardInput) {
+            cardInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s/g, '');
+                let formattedValue = value.match(/.{1,4}/g)?.join('-') || value;
+                e.target.value = formattedValue;
+            });
+        }
+
+        // Formatear fecha de expiración
+        const dateInput = document.querySelector('input[placeholder="MM/AA"]');
+        if (dateInput) {
+            dateInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value;
+            });
+        }
+
+        // Solo números en CVC
+        const cvcInput = document.querySelector('input[placeholder="CVC"]');
+        if (cvcInput) {
+            cvcInput.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+        }
+    </script>
+</body>
+</html>

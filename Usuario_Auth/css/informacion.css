@@ -1,0 +1,285 @@
+/* Información Personal Page */
+.info-personal-section {
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-personal-container {
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.back-link-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #1db883;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-weight: 500;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.back-link-info:hover {
+    opacity: 0.7;
+    transform: translateX(-3px);
+}
+
+.back-link-info svg {
+    width: 20px;
+    height: 20px;
+}
+
+.info-personal-header {
+    background: white;
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.header-icon {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-icon svg {
+    width: 35px;
+    height: 35px;
+    stroke: #1db883;
+}
+
+.info-personal-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.info-personal-header p {
+    color: #666;
+    font-size: 15px;
+}
+
+.info-personal-form {
+    background: white;
+    border-radius: 0 0 20px 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.info-personal-form .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.info-personal-form .form-group label svg {
+    width: 18px;
+    height: 18px;
+    stroke: #1db883;
+}
+
+.label-subtitle {
+    color: #666;
+    font-size: 13px;
+    margin: -5px 0 15px 0;
+    font-weight: normal;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    padding-right: 50px;
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.allergies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.checkbox-card {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-card:hover {
+    background: #f0f0f0;
+    border-color: #1db883;
+}
+
+.checkbox-card input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1db883;
+}
+
+.checkbox-card input[type="checkbox"]:checked ~ .checkbox-label {
+    color: #1db883;
+    font-weight: 600;
+}
+
+.checkbox-card-full {
+    grid-column: 1 / -1;
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 100%;
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 184, 131, 0.3);
+}
+
+.submit-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.privacy-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.privacy-notice svg {
+    width: 16px;
+    height: 16px;
+    stroke: #999;
+    flex-shrink: 0;
+}
+
+.benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+}
+
+.benefit-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.benefit-card p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .info-personal-header {
+        padding: 30px 20px;
+    }
+
+    .info-personal-form {
+        padding: 25px 20px;
+    }
+
+    .benefits-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .info-personal-header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .allergies-grid {
+        grid-template-columns: 1fr;
+    }
+}

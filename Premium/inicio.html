@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio-Nutriforeing</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Inicio - Nutriforeing</title>
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -17,14 +18,15 @@
             <a href="dietas.html">Dietas</a>
             <a href="progreso.html">Mi Progreso</a>
         </nav>
-        <div class="header-right">
-            <div class="notification-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-            </div>
-            <img src="imagenes/gato-meme.gif" alt="Profile" class="profile-pic">
+       
+            <img src="../shared/imagenes/gato-meme.gif" alt="Profile" class="profile-pic">
         </div>
+
+        <div class="auth-buttons">
+            <a href="Inicio_sesion.html" class="login-btn">Iniciar Sesión</a>
+            <a href="registro.html" class="register-btn">Registrarse</a>
+        </div>
+
     </header>
 
     <main>
@@ -32,7 +34,8 @@
             <div class="hero-content">
                 <h1>Tu Dieta Personalizada<br>con IA</h1>
                 <p>Calcula tu IMC, obtén dietas personalizadas y alcanza tus<br>objetivos de salud con nuestro sistema inteligente.</p>
-                <button class="cta-button">Ver Dietas</button>
+                <a href="dietas.html" class="cta-button">Ver Dietas</a>
+
             </div>
         </section>
 
@@ -61,6 +64,8 @@
                     </div>
                     <h3>Dietas y Recetas</h3>
                     <p>Accede a una amplia variedad de dietas y recetas, incluso sin suscripción.</p>
+                    <a href="dietas.html" class="login-btn" style="margin-top:15px; display:inline-block;">Ver Detalles</a>
+
                 </div>
 
 
@@ -72,6 +77,8 @@
                     </div>
                     <h3>Seguimiento de Progreso</h3>
                     <p>Monitorea tu progreso con gráficos detallados y estadísticas personales.</p>
+                    <a href="progreso.html" class="login-btn" style="margin-top:15px; display:inline-block;">Ver Detalles</a>
+
                 </div>
 
 
@@ -87,15 +94,42 @@
             </div>
         </section>
         
-        
+        <section class="planes">
+            <h2>Obtén acceso completo a dietas personalizadas con IA y seguimiento avanzado</h2>
+            <div class="planes-container">
+                <div class="plan basico">
+                    <h3>Básico</h3>
+                    <p class="precio">Gratis</p>
+                    <ul>
+                        <li>3 dietas gratuitas</li>
+                        <li>Calculadora IMC</li>
+                        <li>Recetas básicas</li>
+                    </ul>
+                    <button class="btn-plan">Plan Actual</button>
+                </div>
+
+                <div class="plan premium">
+                    <h3>Premium</h3>
+                    <p class="precio">$30<span>/mes</span></p>
+                    <ul>
+                        <li>Todo lo del plan básico</li>
+                        <li>Seguimiento avanzado</li>
+                        <li>Revisión alimenticia</li>
+                        <li>Soporte nutricional</li>
+                    </ul>
+                    <a href="pago.html" class="cta-button">Suscribirme</a>
+
+                </div>
+            </div>
+        </section>
 
     </main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <div class="logo-icon"></div>
-                    <span>Nutriforeing</span>
+                    <div class="logo-icon">🌿</div>
+                    <span>NutriEasy</span>
                 </div>
                 <p class="footer-description">Tu compañero inteligente para una vida más saludable con dietas personalizadas.</p>
             </div>
@@ -103,7 +137,7 @@
             <div class="footer-section">
                 <h4>Producto</h4>
                 <ul class="footer-links">
-                    <li><a href="dietas.html">Dietas</a></li>
+                    <li><a href="">Dietas</a></li>
                     <li><a href="#">Calculadora IMC</a></li>
                     <li><a href="#">Seguimiento</a></li>
                 </ul>
@@ -137,7 +171,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2024 Nutriforeing. Todos los derechos reservados.</p>
+            <p> 2025 Nutriforeing. Todos los derechos reservados.</p>
         </div>
 
     </footer>

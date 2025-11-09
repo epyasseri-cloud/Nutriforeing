@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Progreso - Nutriforeing</title>
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="css/style01.css">
+  <link rel="stylesheet" href="css/progreso.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span>Nutriforeing</span>
+    </div>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="dietas.html">Dietas</a>
+      <a href="progreso.html" class="active">Mi Progreso</a>
+    </nav>
+
+  </header>
+
+  <main>
+    <div class="progress-dashboard">
+      <!-- Tarjeta de Perfil -->
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="https://via.placeholder.com/80" alt="María González" class="profile-img">
+          <div class="profile-info">
+            <h2>María González</h2>
+            <p class="profile-goal">Objetivo: Pérdida de peso saludable</p>
+            <div class="profile-stats">
+              <div class="stat">
+                <div class="stat-value">68</div>
+                <div class="stat-label">kg actual</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">60</div>
+                <div class="stat-label">kg objetivo</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">8</div>
+                <div class="stat-label">kg restantes</div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-badge">
+            <span class="badge-progress">En progreso</span>
+            <span class="badge-date">Inicio: 15 Ene 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido Principal -->
+      <div class="dashboard-content">
+        <!-- Columna Izquierda -->
+        <div class="left-column">
+          <!-- Gráfico de Progreso de Peso -->
+          <div class="card weight-chart-card">
+            <div class="card-header">
+              <h3>Progreso de Peso</h3>
+              <button class="time-filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10H3M16 2v4M8 2v4M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                </svg>
+                Últimos 3 meses
+              </button>
+            </div>
+            <div class="chart-container">
+              <canvas id="weightChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Estadísticas Rápidas -->
+          <div class="quick-stats">
+            <div class="stat-card">
+              <div class="stat-icon blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-label">Calorías hoy</div>
+                <div class="stat-number">1,450</div>
+                <div class="stat-progress">-200 del objetivo</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-label">Ejercicio</div>
+                <div class="stat-number">1.8L</div>
+                <div class="stat-progress">72% del objetivo</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-label">Ejercicio</div>
+                <div class="stat-number">45min</div>
+                <div class="stat-progress">Completado</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumen Semanal -->
+          <div class="card weekly-summary">
+            <h3>Resumen Semanal</h3>
+            <div class="week-days">
+              <div class="day-item completed">
+                <span class="day-label">LUN</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="day-item completed">
+                <span class="day-label">MAR</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="day-item warning">
+                <span class="day-label">MIÉ</span>
+                <div class="day-icon">—</div>
+              </div>
+              <div class="day-item completed">
+                <span class="day-label">JUE</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="day-item completed">
+                <span class="day-label">VIE</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="day-item active">
+                <span class="day-label">SÁB</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="day-item inactive">
+                <span class="day-label">DOM</span>
+                <div class="day-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="right-column">
+          <!-- Dieta Actual -->
+          <div class="card current-diet">
+            <div class="card-header">
+              <h3>Dieta Actual</h3>
+              <span class="diet-week">Semana 8</span>
+            </div>
+            <div class="diet-info">
+              <h4>Plan Mediterráneo</h4>
+              <p>Dieta balanceada rica en vegetales</p>
+              <div class="diet-stats">
+                <div class="diet-stat">
+                  <div class="diet-stat-number">1,650</div>
+                  <div class="diet-stat-label">Calorías/día</div>
+                </div>
+                <div class="diet-stat">
+                  <div class="diet-stat-number">5</div>
+                  <div class="diet-stat-label">Comidas/día</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comidas de Hoy -->
+          <div class="card today-meals">
+            <h3>Comidas de Hoy</h3>
+            <div class="meals-list">
+              <div class="meal-item completed">
+                <div class="meal-icon" style="background: #FFF4E6;">🍳</div>
+                <div class="meal-info">
+                  <div class="meal-name">Desayuno</div>
+                  <div class="meal-description">Avena con frutas</div>
+                </div>
+                <div class="meal-calories">
+                  <span>320 cal</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1db883">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="meal-item completed">
+                <div class="meal-icon" style="background: #FFE6E6;">🍽️</div>
+                <div class="meal-info">
+                  <div class="meal-name">Media mañana</div>
+                  <div class="meal-description">Manzana + almendras</div>
+                </div>
+                <div class="meal-calories">
+                  <span>150 cal</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1db883">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="meal-item completed">
+                <div class="meal-icon" style="background: #E6F4FF;">🍴</div>
+                <div class="meal-info">
+                  <div class="meal-name">Almuerzo</div>
+                  <div class="meal-description">Ensalada mediterránea</div>
+                </div>
+                <div class="meal-calories">
+                  <span>480 cal</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1db883">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="meal-item">
+                <div class="meal-icon" style="background: #F3E6FF;">🥗</div>
+                <div class="meal-info">
+                  <div class="meal-name">Merienda</div>
+                  <div class="meal-description">Yogur griego</div>
+                </div>
+                <div class="meal-calories">
+                  <span>180 cal</span>
+                  <div class="meal-checkbox"></div>
+                </div>
+              </div>
+
+              <div class="meal-item">
+                <div class="meal-icon" style="background: #FFE6F7;">🐟</div>
+                <div class="meal-info">
+                  <div class="meal-name">Cena</div>
+                  <div class="meal-description">Salmón con verduras</div>
+                </div>
+                <div class="meal-calories">
+                  <span>520 cal</span>
+                  <div class="meal-checkbox"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notas del Nutricionista -->
+          <div class="card nutritionist-notes">
+            <h3>Notas del Nutricionista</h3>
+            <div class="note-content">
+              <div class="note-bar"></div>
+              <div class="note-text">
+                <p>"Excelente progreso esta semana. Mantén la hidratación y aumenta ligeramente las proteínas en el almuerzo."</p>
+                <div class="note-author">
+                  <span>Dr. Ana Martínez</span>
+                  <span class="note-time">Hace 2 días</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <div class="logo-icon">🌿</div>
+          <span>Nutriforeing</span>
+        </div>
+        <p class="footer-description">
+          Tu compañero inteligente para una vida más saludable con dietas personalizadas.
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Producto</h4>
+        <ul class="footer-links">
+          <li><a href="dietas.html">Dietas</a></li>
+          <li><a href="#">Calculadora IMC</a></li>
+          <li><a href="#">Seguimiento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nutriforeing. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Gráfico de Progreso de Peso
+    const ctx = document.getElementById('weightChart');
+    
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+          datasets: [{
+            label: 'Peso (kg)',
+            data: [75, 73, 71, 70, 69, 68],
+            borderColor: '#4285f4',
+            backgroundColor: 'rgba(66, 133, 244, 0.1)',
+            borderWidth: 2,
+            tension: 0.4,
+            fill: true,
+            pointRadius: 4,
+            pointBackgroundColor: '#4285f4',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              backgroundColor: '#1a1a1a',
+              padding: 12,
+              borderRadius: 8,
+              titleFont: {
+                size: 13
+              },
+              bodyFont: {
+                size: 14,
+                weight: 'bold'
+              },
+              callbacks: {
+                label: function(context) {
+                  return context.parsed.y + ' kg';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 60,
+              max: 76,
+              ticks: {
+                stepSize: 5,
+                color: '#999',
+                font: {
+                  size: 12
+                }
+              },
+              grid: {
+                color: '#f0f0f0',
+                drawBorder: false
+              }
+            },
+            x: {
+              ticks: {
+                color: '#999',
+                font: {
+                  size: 12
+                }
+              },
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Interactividad de checkboxes de comidas
+    const mealCheckboxes = document.querySelectorAll('.meal-checkbox');
+    
+    mealCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('click', function() {
+        const mealItem = this.closest('.meal-item');
+        mealItem.classList.toggle('completed');
+        
+        if (mealItem.classList.contains('completed')) {
+          this.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1db883">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          `;
+        } else {
+          this.innerHTML = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

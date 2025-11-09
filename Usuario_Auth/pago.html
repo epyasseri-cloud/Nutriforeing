@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio-Nutriforeing</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/informacion.css">
-    <link rel="stylesheet" href="/css/pago.css">
+    <title>Pago - Nutriforeing</title>
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/informacion.css">
+    <link rel="stylesheet" href="css/pago.css">
 </head>
 <body>
     <header>
@@ -102,8 +103,8 @@
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="cancel-btn">Cancelar</button>
-                            <button type="submit" class="confirm-btn">Confirmar Pago</button>
+                            <button type="button" class="cancel-btn" onclick="abrirModal('modalCancelar')">Cancelar</button>
+                            <button type="button" class="confirm-btn" onclick="abrirModal('modalConfirmar')">Confirmar Pago</button>
                         </div>
                     </form>
                 </div>
@@ -116,7 +117,190 @@
         
     </footer>
 
+    <!-- Modal de Cancelar -->
+    <div id="modalCancelar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="modal-icon warning">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h2>¿Cancelar Pago?</h2>
+            </div>
+            <p>¿Estás seguro de que deseas cancelar el proceso de pago? Se perderán todos los datos ingresados.</p>
+            <div class="modal-actions">
+                <button type="button" class="modal-btn-secondary" onclick="cerrarModal('modalCancelar')">No, Continuar</button>
+                <button type="button" class="modal-btn-primary" onclick="confirmarCancelacion()">Sí, Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmar Pago -->
+    <div id="modalConfirmar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="modal-icon success">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h2>Confirmar Pago</h2>
+            </div>
+            <p>¿Deseas procesar el pago con la información proporcionada? Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button type="button" class="modal-btn-secondary" onclick="cerrarModal('modalConfirmar')">Cancelar</button>
+                <button type="button" class="modal-btn-primary" onclick="procesarPago()">Confirmar Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Estilos del Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+        }
+
+        .modal-icon.warning {
+            color: #f59e0b;
+        }
+
+        .modal-icon.success {
+            color: #10b981;
+        }
+
+        .modal-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .modal-content p {
+            text-align: center;
+            color: #6b7280;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 24px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .modal-btn-primary,
+        .modal-btn-secondary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .modal-btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .modal-btn-secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .modal-btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
     <script>
+        // Funciones para manejar modales
+        function abrirModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function confirmarCancelacion() {
+            window.location.href = 'inicio.html';
+        }
+
+        function procesarPago() {
+            // Aquí iría la lógica de procesamiento de pago
+            cerrarModal('modalConfirmar');
+            alert('¡Pago procesado exitosamente!');
+            window.location.href = 'inicio.html';
+        }
+
+        // Cerrar modal al hacer click fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                cerrarModal(event.target.id);
+            }
+        }
+
         // Interactividad de métodos de pago
         const paymentButtons = document.querySelectorAll('.payment-method-btn');
         

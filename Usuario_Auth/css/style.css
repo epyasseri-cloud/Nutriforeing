@@ -647,3 +647,40 @@ body {
   text-align: center;
   padding: 60px 20px;
 }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Para que no se amontonen en pantallas pequeñas */
+}
+
+.input-presupuesto {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input-presupuesto:focus {
+  background-color: #fff;
+  color: #d99f9f;
+  border-color: #349571;
+}
+
+
+.presupuesto-btn {
+  background-color: #ff7043;
+}
+
+.presupuesto-btn:hover {
+  background-color: #ffa68b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}

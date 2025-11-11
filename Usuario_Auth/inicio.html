@@ -32,7 +32,8 @@
                 <h1>Tu Dieta Personalizada<br>con IA</h1>
                 <p>Calcula tu IMC, obtén dietas personalizadas y alcanza tus<br>objetivos de salud con nuestro sistema inteligente.</p>
                 <a href="dietas.html" class="cta-button">Ver Dietas</a>
-
+                <input type="number" id="presupuesto" placeholder="Tu presupuesto ($)" class="input-presupuesto">
+                <button onclick="redirigirDieta()" class="cta-button presupuesto-btn">Obtener dieta</button>
             </div>
         </section>
 
@@ -172,5 +173,22 @@
         </div>
 
     </footer>
+    <script>
+        function redirigirDieta() {
+        const presupuesto = parseFloat(document.getElementById('presupuesto').value);
+
+        if (isNaN(presupuesto)) {
+            alert('Por favor, ingresa tu presupuesto antes de continuar.');
+            return;
+        }
+
+        if (presupuesto < 800) {
+            window.location.href = 'dietas.html';
+        } else {
+            window.location.href = 'dietas_gurmet.html';
+        }
+        }
+</script>
+
 </body>
 </html>

@@ -93,7 +93,7 @@ nav a.active {
 
 
 .hero {
-    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    background: linear-gradient(135deg,  #4b0e1f, #7b1e3a 100%);
     min-height: 50vh;
     display: flex;
     align-items: center;
@@ -184,7 +184,7 @@ nav a.active {
 .feature-icon {
     width: 50px;
     height: 50px;
-    background-color: #1db883;
+    background-color: #4b0e1f;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -267,7 +267,7 @@ footer {
 .footer-logo .logo-icon {
     width: 35px;
     height: 35px;
-    background: linear-gradient(135deg, #1db883 0%, #17a678 100%);
+    background: linear-gradient(135deg, #4b0e1f, #7b1e3a 100%);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -296,7 +296,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #1db883;
+    color: #7b1e3a;
 }
 
 .social-icons {
@@ -317,7 +317,7 @@ footer {
 }
 
 .social-icons a:hover {
-    background-color: #1db883;
+    background-color: #7b1e3a;
     color: white;
 }
 
@@ -402,7 +402,7 @@ footer {
 }
 
 .social-button:hover {
-    border-color: #1db883;
+    border-color: #7b1e3a;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -457,7 +457,7 @@ footer {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: #1db883;
+    accent-color: #7b1e3a;
 }
 
 /* Pricing Plans */
@@ -576,25 +576,25 @@ footer {
 }
 
 .login-btn {
-    color: #17a678;
-    border: 2px solid #17a678;
+    color: #7b1e3a;
+    border: 2px solid #7b1e3a;
     background: transparent;
 }
 
 .login-btn:hover {
-    background: #17a678;
+    background: #7b1e3a;
     color: #fff;
 }
 
 .register-btn {
-    background: #17a678;
+    background: #7b1e3a;
     color: #fff;
-    border: 2px solid #17a678;
+    border: 2px solid #7b1e3a;
 }
 
 .register-btn:hover {
-    background: #149569;
-    border-color: #149569;
+    background: #4b0e1f;
+    border-color: #7b1e3a;
 }
 
 body {
@@ -620,7 +620,7 @@ body {
 }
 
 .btn-register {
-  background: #17a678;
+  background: #7b1e3a;
   color: white;
   padding: 8px 16px;
   border-radius: 8px;
@@ -630,7 +630,7 @@ body {
 .hero-dieta {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1db883, #17a678);
+  background: linear-gradient(135deg,#4b0e1f, #7b1e3a);
   color: white;
 }
 
@@ -642,8 +642,37 @@ body {
 }
 
 .cta {
-  background: linear-gradient(135deg, #1db883, #17a678);
+  background: linear-gradient(135deg, #4b0e1f, #7b1e3a);
   color: white;
   text-align: center;
   padding: 60px 20px;
+}
+
+.input-presupuesto {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input-presupuesto:focus {
+  background-color: #fff;
+  color: #d99f9f;
+  border-color: #000000;
+}
+
+
+.presupuesto-btn {
+  background-color: #4b0e1f;
+}
+
+.presupuesto-btn:hover {
+  background-color: #fdfdfd;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

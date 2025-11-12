@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta Personalizada - Nutriforeing</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #4b0e1f;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #666;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #4b0e1f;
+      font-weight: 500;
+    }
+
+    .hero-dieta {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg,#4b0e1f, #7b1e3a);
+      color: white;
+    }
+
+    .hero-dieta h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-dieta p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .feature-card {
+      background-color: white;
+      padding: 30px 60px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      max-width: 500px;
+      margin: 50px auto;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: none;
+      font-size: 15px;
+      background-color: #f8f9fa;
+      transition: border 0.3s;
+      margin-bottom: 20px;
+    }
+
+    textarea:focus {
+      border-color: #7b1e3a;
+      outline: none;
+      background: #fff;
+    }
+
+    .btn-generar {
+      background: #7b1e3a;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .btn-generar:hover {
+      background: #4b0e1f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1a1d2e;
+      color: #8892ab;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon">🥗</div>
+      Nutriforeing
+    </div>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="dieta_personalizada.html" class="active">Dieta</a>
+    </nav>
+  </header>
+
+  <section class="hero-dieta">
+    <h1>Dieta Personalizada</h1>
+    <p>Escribe los productos que tienes en casa o los que deseas incluir en tu dieta personalizada.</p>
+  </section>
+
+  <section class="feature-card" >
+    <h3>Ingresa tus productos</h3>
+    <textarea id="productos" rows="5" placeholder="Ejemplo: arroz, pollo, espinacas, huevo, avena..."></textarea>
+    <button class="btn-generar" onclick="guardarProductos()">Obtener dieta personalizada</button>
+  </section>
+
+  <footer>
+    © 2025 Nutriforeing - Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function guardarProductos() {
+      const productos = document.getElementById('productos').value.trim();
+      if (productos === "") {
+        alert("Por favor, escribe algunos productos antes de continuar.");
+        return;
+      }
+      localStorage.setItem("productosUsuario", productos);
+      window.location.href = "resultado_dieta.html";
+    }
+  </script>
+</body>
+</html>

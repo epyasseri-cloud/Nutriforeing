@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta Personalizada - Resultado</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #4b0e1f;
+    }
+
+    .resultado {
+      max-width: 950px;
+      margin: 70px auto;
+      background: #fff;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .resultado h2 {
+      color: #4b0e1f;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 36px;
+    }
+
+    .productos-lista {
+      background: #f3f3f6;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      color: #555;
+      text-align: center;
+    }
+
+    .menu-dia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .comida {
+      background: #fafafa;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .comida:hover {
+      transform: translateY(-5px);
+    }
+
+    .comida h3 {
+      color: #7b1e3a;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .comida p {
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .calorias {
+      font-size: 13px;
+      color: #999;
+      margin-top: 8px;
+      text-align: right;
+    }
+
+    .modo-prep {
+      background: #f8f9fc;
+      border-left: 4px solid #7b1e3a;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .modo-prep strong {
+      color: #4b0e1f;
+    }
+
+    .btn-volver {
+      display: inline-block;
+      margin-top: 40px;
+      background: #7b1e3a;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .btn-volver:hover {
+      background: #4b0e1f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1a1d2e;
+      color: #8892ab;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🥗 Nutriforeing</div>
+  </header>
+
+  <section class="resultado">
+    <h2>Tu Dieta Personalizada 🍴</h2>
+    <div class="productos-lista" id="productos-lista"></div>
+    <div class="menu-dia" id="menu-dia"></div>
+    <div style="text-align:center;">
+      <a href="dieta_personalizada.html" class="btn-volver">Volver</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Nutriforeing - Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const productos = localStorage.getItem("productosUsuario");
+
+    if (!productos) {
+      document.querySelector(".resultado").innerHTML =
+        "<p>No se encontraron productos. Regresa e ingresa tus ingredientes.</p>";
+    } else {
+      document.getElementById("productos-lista").innerHTML =
+        "<strong>Productos ingresados:</strong> " + productos;
+
+      const alimentos = productos.split(",").map(p => p.trim().toLowerCase());
+
+      const proteinas = ["pollo","carne","pescado","huevo","atún","tofu","lentejas","garbanzos"];
+      const carbohidratos = ["arroz","pasta","avena","pan","tortilla","papa","camote"];
+      const frutas = ["manzana","plátano","fresa","pera","naranja","mango","kiwi","uva"];
+      const verduras = ["espinacas","lechuga","jitomate","zanahoria","brócoli","pepino","calabaza"];
+
+      const tieneProteina = alimentos.some(a => proteinas.includes(a));
+      const tieneCarb = alimentos.some(a => carbohidratos.includes(a));
+      const tieneFruta = alimentos.some(a => frutas.includes(a));
+      const tieneVerdura = alimentos.some(a => verduras.includes(a));
+
+      const menu = [];
+
+      if (tieneCarb || tieneFruta) {
+        menu.push({
+          nombre: "Desayuno",
+          descripcion: `Empieza tu día con avena y ${
+            (alimentos.find(a => frutas.includes(a)) || "frutas variadas")
+          } acompañadas de yogurt natural.`,
+          calorias: "≈ 350 kcal",
+          preparacion: `
+            1️⃣ En una olla pequeña, calienta una taza de leche o agua.<br>
+            2️⃣ Agrega media taza de avena y cocina por 5-7 minutos.<br>
+            3️⃣ Añade las frutas picadas y una cucharadita de miel o canela.<br>
+            4️⃣ Sirve con yogurt natural o semillas.`
+        });
+      }
+
+      if (tieneProteina && tieneCarb && tieneVerdura) {
+        menu.push({
+          nombre: "Comida",
+          descripcion: `Disfruta ${
+            (alimentos.find(a => proteinas.includes(a)) || "una proteína")
+          } con ${
+            (alimentos.find(a => carbohidratos.includes(a)) || "arroz integral")
+          } y una ensalada de ${
+            (alimentos.find(a => verduras.includes(a)) || "verduras variadas")
+          }.`,
+          calorias: "≈ 550 kcal",
+          preparacion: `
+            1️⃣ Cocina la proteína a la plancha con poco aceite.<br>
+            2️⃣ Cuece el arroz o la pasta hasta que esté suave.<br>
+            3️⃣ Lava y pica las verduras; mézclalas con limón y sal.<br>
+            4️⃣ Sirve todo en un plato balanceado.`
+        });
+      }
+
+      menu.push({
+        nombre: "Cena",
+        descripcion: `Una opción ligera: ${
+          (alimentos.find(a => proteinas.includes(a)) || "atún")
+        } con verduras al vapor y un toque de limón.`,
+        calorias: "≈ 400 kcal",
+        preparacion: `
+          1️⃣ Cocina las verduras al vapor por 5 minutos.<br>
+          2️⃣ Mezcla el atún o proteína elegida con las verduras.<br>
+          3️⃣ Agrega un chorrito de aceite de oliva y jugo de limón.<br>
+          4️⃣ Acompaña con té o infusión.`
+      });
+
+      menu.push({
+        nombre: "Snack",
+        descripcion: `Entre comidas disfruta ${
+          (alimentos.find(a => frutas.includes(a)) || "una fruta")
+        } o un puñado de nueces.`,
+        calorias: "≈ 150 kcal",
+        preparacion: `
+          1️⃣ Lava y corta la fruta si es necesario.<br>
+          2️⃣ Puedes combinarla con yogurt o granola.<br>
+          3️⃣ Si prefieres algo salado, opta por 5 almendras o nueces.`
+      });
+
+      const menuContainer = document.getElementById("menu-dia");
+      menu.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "comida";
+        div.innerHTML = `
+          <h3>${item.nombre}</h3>
+          <p>${item.descripcion}</p>
+          <div class="modo-prep"><strong>Modo de preparación:</strong><br>${item.preparacion}</div>
+          <p class="calorias">${item.calorias}</p>
+        `;
+        menuContainer.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
